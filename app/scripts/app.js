@@ -6,7 +6,12 @@
 angular
   .module('angular.bootstrap', [
     'ngResource',
-    'ui.router'
+    'ngAnimate',
+    'ui.router',
+    'ui.bootstrap',
+    'angular.bootstrap.module1',
+    'angular.bootstrap.module2',
+    'angular.bootstrap.module3'
   ])
   .config(function ($stateProvider, $urlRouterProvider,$httpProvider) {
 
@@ -14,13 +19,18 @@ angular
     $httpProvider.interceptors.push('HttpInterceptor');
 
     //default routes if the url does not match any of the followings
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/welcome'); 
 
     // Now set up the states
     $stateProvider
       .state('main',{
         url:'/',
         templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        controller: 'MainCtrl',
+        abstract:true
       })
+      .state('main.welcome',{
+        url:'welcome',
+        templateUrl: 'views/welcome.html'
+      }); 
   });

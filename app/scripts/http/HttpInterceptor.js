@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('angular.bootstrap').factory('HttpInterceptor',['$q', function($q) {
     var sessionInjector = {
 

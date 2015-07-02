@@ -1,0 +1,19 @@
+{
+  "globalstrict": true,
+  "globals": {
+    "angular": false,
+
+    "browser": false,
+    "element": false,
+    "by": false,
+    "module":false,
+    "require":false,
+    "_":false,
+    "localStorage":false,
+
+    "describe": false,
+    "beforeEach": false,
+    "it": false,
+    "expect": false
+  }
+}

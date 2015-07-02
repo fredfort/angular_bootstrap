@@ -22,6 +22,8 @@ module.exports = function(config) {
       'bower_components/jquery/dist/jquery.js',
       'bower_components/angular/angular.js',
       'bower_components/angular-ui-router/release/angular-ui-router.js',
+      'bower_components/angular-animate/angular-animate.js',
+      'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
       'bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js',
       'bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/alert.js',
       'bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/button.js',
@@ -40,6 +42,8 @@ module.exports = function(config) {
 
       
       // endbower
+
+      'app/modules/**/scripts/*.js',
       'app/scripts/**/*.js',
       'test/spec/**/*.js'
     ],

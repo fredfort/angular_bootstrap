@@ -19,16 +19,18 @@ Done
 * Create a git repository
 * Create the app with yeoman 
 * Use ui-rooter
+* split the app into modules
+* Use Bootstrap-UI
 
 TODO
 -------
 
-* split the app into modules
-* Use Bootstrap-UI
 * Create a REST API Call Factory
 * Create a HTTP interceptor
 * Load properly bootsrap SASS (in order to easily override bootstrap variables)
 * Handle error message error
+* Create different environment build(dev, stagging, prod)
+* Use SvgIcons 
 
 * Many other improvements to come
 

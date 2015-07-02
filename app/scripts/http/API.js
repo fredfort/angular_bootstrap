@@ -1,8 +1,9 @@
+'use strict';
+
 angular.module('angular.bootstrap')
 
 .factory('API',['$http',function($http){
-	var baseURL = 'https://athena-7.herokuapp.com/ancients.json';
-
+	var baseURL = '';
 	return {		
 		getAncients:function(){
 			return $http.get(baseURL);
@@ -15,6 +16,6 @@ angular.module('angular.bootstrap')
 		getError: function(){
 			return $http.get(baseURL+"?error=true");
 		}	
-	}
+	};
 
 }]);
