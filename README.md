@@ -21,16 +21,18 @@ Done
 * Use ui-rooter
 * split the app into modules
 * Use Bootstrap-UI
+* Load properly bootsrap SASS (in order to easily override bootstrap variables)
 
 TODO
 -------
 
 * Create a REST API Call Factory
 * Create a HTTP interceptor
-* Load properly bootsrap SASS (in order to easily override bootstrap variables)
 * Handle error message error
 * Create different environment build(dev, stagging, prod)
 * Use SvgIcons 
+* Use wiredep to dynamically load bower dependencies
+* Use ngtemplates
 
 * Many other improvements to come
 
