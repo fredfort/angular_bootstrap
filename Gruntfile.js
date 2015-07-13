@@ -18,7 +18,8 @@ module.exports = function (grunt) {
   // Configurable paths for the application
   var appConfig = {
     app: require('./bower.json').appPath || 'app',
-    dist: 'dist'
+    dist: 'dist', 
+    test: 'test'
   };
 
   // Define the configuration for all the tasks
@@ -29,6 +30,10 @@ module.exports = function (grunt) {
 
     // Watches files for changes and runs tasks based on the changed files
     watch: {
+      bower: {
+        files: ['bower.json'],
+        tasks: ['wiredep']
+      },
       js: {
         files: ['<%= yeoman.app %>/scripts/{,*/}*.js','<%= yeoman.app %>/modules/**/scripts/{,*/}*.js'],
         tasks: ['newer:jshint:all'],
@@ -319,6 +324,12 @@ module.exports = function (grunt) {
       }
     },
 
+    wiredep: {
+      task: {
+        src: ['<%= yeoman.app %>/index.html','<%= yeoman.test %>/karma.conf.js' ],
+        ignorePath:  /\.\.\//
+      }
+    },
 
     // enviroment specific configuration
     ///////////////////////////////////////
@@ -402,19 +413,20 @@ module.exports = function (grunt) {
 
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
     if (target === 'dist') {
-      return grunt.task.run(['build', 'connect:dist:keepalive']);
+      return grunt.task.run(['build', 'wiredep', 'connect:dist:keepalive']);
     }
 
     if (target === 'production') {
-      return grunt.task.run(['replace:production', 'build', 'connect:dist:keepalive']);
+      return grunt.task.run(['replace:production', 'build', 'wiredep', 'connect:dist:keepalive']);
     }
 
     if (target === 'staging') {
-      return grunt.task.run(['replace:staging', 'build', 'connect:dist:keepalive']);
+      return grunt.task.run(['replace:staging', 'build', 'wiredep', 'connect:dist:keepalive']);
     }
 
     grunt.task.run([
       'clean:server',
+      'wiredep',
       'replace:dev',
       'concurrent:server',
       'autoprefixer',

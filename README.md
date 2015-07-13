@@ -22,6 +22,8 @@ Done
 * split the app into modules
 * Use Bootstrap-UI
 * Load properly bootsrap SASS (in order to easily override bootstrap variables)
+* Use wiredep to dynamically load bower dependencies (app & test)
+
 
 TODO
 -------
@@ -31,7 +33,6 @@ TODO
 * Handle error message error
 * Create different environment build(dev, stagging, prod)
 * Use SvgIcons 
-* Use wiredep to dynamically load bower dependencies
 * Use ngtemplates
 
 * Many other improvements to come
