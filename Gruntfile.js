@@ -319,6 +319,64 @@ module.exports = function (grunt) {
       }
     },
 
+
+    // enviroment specific configuration
+    ///////////////////////////////////////
+    replace: {
+      dev: {
+        options: {
+          patterns: [
+            {
+              json: grunt.file.readJSON('./app/config/environments/dev.json')
+            }
+          ]
+        },
+        files: [
+          {
+            expand: true,
+            flatten: true,
+            src: ['./app/config/template/config.js'],
+            dest: '<%= yeoman.app %>/config/'
+          }
+        ]
+      },
+      staging: {
+        options: {
+          patterns: [
+            {
+              json: grunt.file.readJSON('./app/config/environments/staging.json')
+            }
+          ]
+        },
+        files: [
+          {
+            expand: true,
+            flatten: true,
+            src: ['./app/config/template/config.js'],
+            dest: '<%= yeoman.app %>/config/'
+          }
+        ]
+      },
+      production: {
+        options: {
+          patterns: [
+            {
+              json: grunt.file.readJSON('./app/config/environments/production.json')
+            }
+          ]
+        },
+        files: [
+          {
+            expand: true,
+            flatten: true,
+            src: ['./app/config/template/config.js'],
+            dest: '<%= yeoman.app %>/config/'
+          }
+        ]
+      }
+    },
+
+
     // Run some tasks in parallel to speed up the build process
     concurrent: {
       options: {
@@ -347,8 +405,17 @@ module.exports = function (grunt) {
       return grunt.task.run(['build', 'connect:dist:keepalive']);
     }
 
+    if (target === 'production') {
+      return grunt.task.run(['replace:production', 'build', 'connect:dist:keepalive']);
+    }
+
+    if (target === 'staging') {
+      return grunt.task.run(['replace:staging', 'build', 'connect:dist:keepalive']);
+    }
+
     grunt.task.run([
       'clean:server',
+      'replace:dev',
       'concurrent:server',
       'autoprefixer',
       'connect:livereload',
@@ -363,6 +430,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('test', [
     'clean:server',
+    'replace:dev',
     'concurrent:test',
     'autoprefixer',
     'connect:test',
@@ -384,6 +452,20 @@ module.exports = function (grunt) {
     'filerev',
     'usemin',
     'htmlmin'
+  ]);
+
+  grunt.registerTask('production',[
+    'newer:jshint',
+    'replace:production',
+    'test',
+    'build'
+  ]);
+
+  grunt.registerTask('staging',[
+    'newer:jshint',
+    'replace:staging',
+    'test',
+    'build'
   ]);
 
   grunt.registerTask('default', [

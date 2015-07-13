@@ -1,0 +1,9 @@
+{
+  "environment": "production",
+  "app": {
+    "baseUrl": "https://productionUrl"
+  },
+  "api": {
+    "baseUrl": "PRODUCTION_API"
+  }
+}
