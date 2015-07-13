@@ -52,6 +52,10 @@ TODO
 
 ## Build
 Running `grunt build` will build the project into the dist directory.
+Running `grunt staging` will build the staging project into the dist directory.
+Running `grunt production` will build the production project into the dist directory.
+
+
 
 ## Testing
 
