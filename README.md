@@ -45,15 +45,15 @@ TODO
 
 ## How to run it
 1. Unzip the angular.bootstrap.zip file inside your folder
-1. Make sure you have Grunt installed `sudo npm install -g grunt grunt-cli`
-2. Make sure you have Bower installed `sudo npm install -g bower`
-3. Install project dependencies `npm install && bower install`
-6. Run server `grunt serve` at the root of the project will open up browser window at `http://localhost:9000/apps/index.html`
+2. Make sure you have Grunt installed `sudo npm install -g grunt grunt-cli`
+3. Make sure you have Bower installed `sudo npm install -g bower`
+4. Install project dependencies `npm install && bower install`
+5. Run server `grunt serve` at the root of the project will open up browser window at `http://localhost:9000/apps/index.html`
 
 ## Build
-Running `grunt build` will build the project into the dist directory.
-Running `grunt staging` will build the staging project into the dist directory.
-Running `grunt production` will build the production project into the dist directory.
+- Running `grunt build` will build the project into the dist directory.
+- Running `grunt staging` will build the staging project into the dist directory.
+- Running `grunt production` will build the production project into the dist directory.
 
 
 
