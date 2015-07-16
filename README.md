@@ -43,11 +43,11 @@ TODO
 - Compass - [installation](http://compass-style.org/install/)
 
 ## How to run it
-1. Unzip the angular.bootstrap.zip file inside your folder
-2. Make sure you have Grunt installed `sudo npm install -g grunt grunt-cli`
-3. Make sure you have Bower installed `sudo npm install -g bower`
-4. Install project dependencies `npm install && bower install`
-5. Run server `grunt serve` at the root of the project will open up browser window at `http://localhost:9000/apps/index.html`
+1. Close the repository
+2. Make sure you have Grunt and Bower installed `sudo npm install -g grunt grunt-cli bower`
+3. Install dependencies `npm install && bower install` inside the project repository
+4. Run server `grunt serve`
+5. Check out the project at `http://localhost:9000/apps/index.html`
 
 ## Build
 - Running `grunt build` will build the project into the dist directory.
