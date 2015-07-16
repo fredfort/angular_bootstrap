@@ -1,13 +1,10 @@
-# angular_bootstrap - FORT Frederic
-
-Client code for angular.bootstrap.
-
-Technologies used: Yeoman, Grunt, bower, angularjs, bootstrap for css.
-
 # angular_bootstrap
-Good start for all your angular project 
 
-Objectives
+* Good start for all your angular project 
+* Technologies used: Yeoman, Grunt, bower, angularjs, bootstrap for css.
+
+
+Objective
 -------
 
 Build a generic start for every angular project 
@@ -19,9 +16,9 @@ Done
 * Create a git repository
 * Create the app with yeoman 
 * Use ui-rooter
-* split the app into modules
+* Split the app into modules
 * Use Bootstrap-UI
-* Load properly bootsrap SASS (in order to easily override bootstrap variables)
+* Load properly bootsrap SASS (in order to easily overwrite bootstrap variables)
 * Create different environment build(dev, stagging, prod)
 * Use wiredep to dynamically load bower dependencies (app & test)
 * Use angular ngtemplates for caching your HTML templates with $templateCache.
