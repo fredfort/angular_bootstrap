@@ -9,6 +9,7 @@ angular
     'ngAnimate',
     'ui.router',
     'ui.bootstrap',
+    'angular.bootstrap.htmlTemplates',
     'angular.bootstrap.module1',
     'angular.bootstrap.module2',
     'angular.bootstrap.module3'

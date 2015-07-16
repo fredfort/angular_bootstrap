@@ -35,7 +35,7 @@ module.exports = function (grunt) {
         tasks: ['wiredep']
       },
       js: {
-        files: ['<%= yeoman.app %>/scripts/{,*/}*.js','<%= yeoman.app %>/modules/**/scripts/{,*/}*.js'],
+        files: ['<%= yeoman.app %>/scripts/{,*/}*.js','<%= yeoman.app %>/modules/**/scripts/{,*/}*.js','!<%= yeoman.app %>/scripts/htmlTemplates.js'],
         tasks: ['newer:jshint:all'],
         options: {
           livereload: '<%= connect.options.livereload %>'
@@ -54,6 +54,10 @@ module.exports = function (grunt) {
       },
       gruntfile: {
         files: ['Gruntfile.js']
+      },
+      template:{
+        files:['<%= yeoman.app %>/**/{,**/}*.html'],
+        tasks:['ngtemplates']
       },
       livereload: {
         options: {
@@ -331,6 +335,16 @@ module.exports = function (grunt) {
       }
     },
 
+     ngtemplates : {
+      'angular.bootstrap.htmlTemplates' : {
+        src     : '<%= yeoman.app %>/**/{,**/}*.html',
+        dest    : '<%= yeoman.app %>/scripts/htmlTemplates.js',
+        options : {
+          standalone : true
+        }
+      }
+    },
+
     // enviroment specific configuration
     ///////////////////////////////////////
     replace: {
@@ -428,6 +442,7 @@ module.exports = function (grunt) {
       'clean:server',
       'wiredep',
       'replace:dev',
+      'ngtemplates',
       'concurrent:server',
       'autoprefixer',
       'connect:livereload',
@@ -463,7 +478,8 @@ module.exports = function (grunt) {
     'uglify',
     'filerev',
     'usemin',
-    'htmlmin'
+    'htmlmin',
+    'ngtemplates'
   ]);
 
   grunt.registerTask('production',[

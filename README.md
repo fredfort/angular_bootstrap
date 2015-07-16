@@ -24,6 +24,7 @@ Done
 * Load properly bootsrap SASS (in order to easily override bootstrap variables)
 * Create different environment build(dev, stagging, prod)
 * Use wiredep to dynamically load bower dependencies (app & test)
+* Use angular ngtemplates for caching your HTML templates with $templateCache.
 
 
 TODO
@@ -32,8 +33,8 @@ TODO
 * Create a REST API Call Factory
 * Create a HTTP interceptor
 * Handle error message error
-* Use SvgIcons 
-* Use ngtemplates
+* Use SvgIcons
+* Use John Papa Styles
 
 * Many other improvements to come
 
