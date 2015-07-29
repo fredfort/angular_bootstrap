@@ -7,7 +7,7 @@ angular.module('angular.bootstrap')
         home: 'https://127.0.0.1:9003'
     },
     api: {
-        baseUrl: 'API_DEV'
+        baseUrl: 'http://API_DEV/'
         
     }
 });

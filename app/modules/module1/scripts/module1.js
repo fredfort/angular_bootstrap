@@ -18,6 +18,12 @@ angular
       .state('main.module1',{
         url:'module1', 
         templateUrl: PATH+'/views/main.html',
-        controller: 'Module1MainCtrl'
-      })
+        controller: 'Module1MainCtrl', 
+        resolve:{
+          module1Data : ['API', function(API){
+            //return API.get('modules1'); Uncomment when API is ready
+            return {};
+          }]
+        }
+      });
   }); 

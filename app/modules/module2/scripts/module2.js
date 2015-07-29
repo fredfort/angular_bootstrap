@@ -20,5 +20,5 @@ angular
         url:'module2',
         templateUrl: PATH + '/views/main.html',
         controller: 'Module2MainCtrl'
-      })
+      });
   });

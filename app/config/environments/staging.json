@@ -4,6 +4,6 @@
     "baseUrl": "https://stagingUrl"
   },
   "api": {
-    "baseUrl": "STAGING_API"
+    "baseUrl": "http://STAGING_API/"
   }
 }

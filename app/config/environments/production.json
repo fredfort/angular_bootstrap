@@ -4,6 +4,6 @@
     "baseUrl": "https://productionUrl"
   },
   "api": {
-    "baseUrl": "PRODUCTION_API"
+    "baseUrl": "http://PRODUCTION_API/"
   }
 }

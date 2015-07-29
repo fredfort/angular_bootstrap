@@ -22,12 +22,12 @@ Done
 * Create different environment build(dev, stagging, prod)
 * Use wiredep to dynamically load bower dependencies (app & test)
 * Use angular ngtemplates for caching your HTML templates with $templateCache.
+* Create a REST API Call Factory
 
 
 TODO
 -------
 
-* Create a REST API Call Factory
 * Create a HTTP interceptor
 * Handle error message error
 * Use SvgIcons

@@ -2,19 +2,26 @@
 
 angular.module('angular.bootstrap')
 
-.factory('API',['$http',function($http){
-	var baseURL = '';
-	return {		
-		getAncients:function(){
-			return $http.get(baseURL);
+.factory('API',['$http','config',function($http, config){
+	var baseUrl = config.api.baseUrl;
+
+	return {
+		get:function(url){
+			return $http.get(baseUrl+url);
+		}, 		
+		post:function(url, bodyParams){
+			if(!bodyParams || !angular.isObject(bodyParams)){
+				throw "Second parameters need to be an Object";
+			}
+			return $http.post(baseUrl+url,bodyParams);
 		}, 
 
-		searchAncients:function(searchCriteria){
-			return $http.get(baseURL+"?search="+searchCriteria);
+		put:function(url, bodyParams){
+			return $http.put(baseUrl+url,bodyParams);
 		}, 
 
-		getError: function(){
-			return $http.get(baseURL+"?error=true");
+		delete: function(url){
+			return $http.delete(url);
 		}	
 	};
 
