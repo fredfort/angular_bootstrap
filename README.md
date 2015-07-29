@@ -23,13 +23,11 @@ Done
 * Use wiredep to dynamically load bower dependencies (app & test)
 * Use angular ngtemplates for caching your HTML templates with $templateCache.
 * Create a REST API Call Factory
-
+* Create a HTTP interceptor
+* Handle server message error
 
 TODO
 -------
-
-* Create a HTTP interceptor
-* Handle error message error
 * Use SvgIcons
 * Use John Papa Styles
 

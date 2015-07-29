@@ -15,6 +15,7 @@ angular.module('angular.bootstrap.htmlTemplates', []).run(['$templateCache', fun
     "    <!-- endbuild -->\n" +
     "    \n" +
     "    <!-- bower:css -->\n" +
+    "    <link rel=\"stylesheet\" href=\"bower_components/angularjs-toaster/toaster.css\" />\n" +
     "    <!-- endbower -->\n" +
     "\n" +
     "  </head>\n" +
@@ -22,7 +23,9 @@ angular.module('angular.bootstrap.htmlTemplates', []).run(['$templateCache', fun
     "\n" +
     "    <!-- Content goes here -->\n" +
     "    <div ui-view></div>\n" +
-    " \n" +
+    "\n" +
+    "    <!--Toaster popup -->\n" +
+    "    <toaster-container></toaster-container> \n" +
     "\n" +
     "    <!-- build:js(.) scripts/vendor.js -->\n" +
     "\n" +
@@ -33,6 +36,7 @@ angular.module('angular.bootstrap.htmlTemplates', []).run(['$templateCache', fun
     "    <script src=\"bower_components/angular-bootstrap/ui-bootstrap-tpls.js\"></script>\n" +
     "    <script src=\"bower_components/lodash/lodash.js\"></script>\n" +
     "    <script src=\"bower_components/angular-animate/angular-animate.js\"></script>\n" +
+    "    <script src=\"bower_components/angularjs-toaster/toaster.js\"></script>\n" +
     "    <!-- endbower -->\n" +
     "\n" +
     "    <!-- endbuild -->\n" +
@@ -103,7 +107,7 @@ angular.module('angular.bootstrap.htmlTemplates', []).run(['$templateCache', fun
     "      <ul class=\"nav navbar-nav\">\n" +
     "        <li><a ui-sref='main.module1'>Module 1</a></li>\n" +
     "        <li><a ui-sref='main.module2'>Module 2</a></li>\n" +
-    "        <li><a ui-sref='main.module3'>Module 3</a></li>\n" +
+    "        <li><a ui-sref='main.module3'>Module 3 (error)</a></li>\n" +
     "      </ul>\n" +
     "    </div><!-- /.navbar-collapse -->\n" +
     "  </div><!-- /.container-fluid --> \n" +

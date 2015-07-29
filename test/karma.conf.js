@@ -25,6 +25,7 @@ module.exports = function(config) {
       'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
       'bower_components/lodash/lodash.js',
       'bower_components/angular-animate/angular-animate.js',
+      'bower_components/angularjs-toaster/toaster.js',
       // endbower
 
       'bower_components/angular-mocks/angular-mocks.js',

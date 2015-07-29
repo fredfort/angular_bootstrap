@@ -12,7 +12,8 @@ angular
     'angular.bootstrap.htmlTemplates',
     'angular.bootstrap.module1',
     'angular.bootstrap.module2',
-    'angular.bootstrap.module3'
+    'angular.bootstrap.module3', 
+    'toaster'
   ])
   .config(function ($stateProvider, $urlRouterProvider,$httpProvider) {
 

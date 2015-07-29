@@ -19,6 +19,11 @@ angular
       .state('main.module3',{
         url:'module3',
         templateUrl: PATH + '/views/main.html',
-        controller: 'Module3MainCtrl'
+        controller: 'Module3MainCtrl',
+        resolve:{
+          module3Error : ['API', function(API){
+            return API.get('modules3');//A 404 is raised
+          }]
+        }
       });
   });
