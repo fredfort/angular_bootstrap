@@ -331,7 +331,10 @@ module.exports = function (grunt) {
     wiredep: {
       task: {
         src: ['<%= yeoman.app %>/index.html','<%= yeoman.test %>/karma.conf.js' ],
-        ignorePath:  /\.\.\//
+        ignorePath:  /\.\.\//,
+        options:{
+          exclude: [ '/jquery/', 'bower_components/bootstrap-sass/assets/javascripts/bootstrap.js' ],
+        }
       }
     },
 
