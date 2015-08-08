@@ -19,18 +19,19 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       // bower:js
-      'bower_components/angular/angular.js',
-      'bower_components/angular-resource/angular-resource.js',
-      'bower_components/angular-ui-router/release/angular-ui-router.js',
-      'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
-      'bower_components/lodash/lodash.js',
-      'bower_components/angular-animate/angular-animate.js',
-      'bower_components/angularjs-toaster/toaster.js',
+      'app/bower_components/angular/angular.js',
+      'app/bower_components/angular-resource/angular-resource.js',
+      'app/bower_components/angular-ui-router/release/angular-ui-router.js',
+      'app/bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
+      'app/bower_components/lodash/lodash.js',
+      'app/bower_components/angular-animate/angular-animate.js',
+      'app/bower_components/angularjs-toaster/toaster.js',
       // endbower
 
-      'bower_components/angular-mocks/angular-mocks.js',
+      'app/bower_components/angular-mocks/angular-mocks.js',
 
       'app/modules/**/scripts/*.js',
+      'app/images/svg_gen/grunticon.loader.js',
       'app/scripts/**/*.js',
       'app/config/config.js',
       'test/spec/**/*.js'

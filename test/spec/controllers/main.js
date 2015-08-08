@@ -5,8 +5,7 @@ describe('Controller: MainCtrl', function () {
   // load the controller's module
   beforeEach(module('angular.bootstrap'));
 
-  var MainCtrl,$location,
-    scope;
+  var MainCtrl,$location,scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope, _$location_) {

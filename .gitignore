@@ -4,3 +4,6 @@ node_modules/
 dist/
 .tmp/
 *.css
+app/scripts/htmlTemplates.js
+app/images/svg_gen/
+.DS_store

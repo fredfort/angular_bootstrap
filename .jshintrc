@@ -10,7 +10,7 @@
     "require":false,
     "_":false,
     "localStorage":false,
-
+    "grunticon": false,
     "describe": false,
     "beforeEach": false,
     "it": false,

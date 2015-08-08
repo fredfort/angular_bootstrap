@@ -25,12 +25,17 @@ Done
 * Create a REST API Call Factory
 * Create a HTTP interceptor
 * Handle server message error
+* Use SvgIcons
+* Unit test
+* End to end test
 
 TODO
 -------
-* Use SvgIcons
-* Use John Papa Styles
 
+* Use John Papa Styles
+* Migration to GULP
+* Automate the e2e testing
+* Improve Unit testing
 * Many other improvements to come
 
 ## Requirements
@@ -48,12 +53,22 @@ TODO
 5. Check out the project at `http://localhost:9000/apps/index.html`
 
 ## Build
-- Running `grunt build` will build the project into the dist directory.
-- Running `grunt staging` will build the staging project into the dist directory.
-- Running `grunt production` will build the production project into the dist directory.
+- Running `grunt build` builds the project into the dist directory.
+- Running `grunt staging` builds the staging project into the dist directory.
+- Running `grunt production` builds the production project into the dist directory.
 
 
+## Unit Testing
 
-## Testing
+Running `grunt test` runs the unit tests with karma.
 
-Running `grunt test` will run the unit tests with karma.
+## End to end Testing
+
+Install protractor
+`npm install -g protractor`
+
+Download the selenium standalone server
+`webdriver-manager update`
+
+`webdriver-manager start` 
+`grunt protractor` open a browser and run the end to end tests with protractor(selenium).

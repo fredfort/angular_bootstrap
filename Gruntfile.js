@@ -86,8 +86,8 @@ module.exports = function (grunt) {
             return [
               connect.static('.tmp'),
               connect().use(
-                '/bower_components',
-                connect.static('./bower_components')
+                '/app/bower_components',
+                connect.static('./app/bower_components')
               ),
               connect.static(appConfig.app)
             ];
@@ -102,8 +102,8 @@ module.exports = function (grunt) {
               connect.static('.tmp'),
               connect.static('test'),
               connect().use(
-                '/bower_components',
-                connect.static('./bower_components')
+                '/app/bower_components',
+                connect.static('./app/bower_components')
               ),
               connect.static(appConfig.app)
             ];
@@ -136,6 +136,31 @@ module.exports = function (grunt) {
           jshintrc: 'test/.jshintrc'
         },
         src: ['test/spec/{,*/}*.js']
+      }
+    },
+
+    svgmin: {
+      dist: {
+        files: [{
+            expand: true,
+            cwd: '<%= yeoman.app %>/images/svg/',
+            src: ['*.svg'],
+            dest: '.tmp/images/svg_min/'
+        }]
+      }
+    },
+
+    grunticon: {
+      dist: {
+        files: [{
+            expand: true,
+            cwd: '.tmp/images/svg_min/',
+            src: ['*.svg', '*.png'],
+            dest: '<%= yeoman.app %>/images/svg_gen/'
+        }],
+        options: {
+          cssprefix:'.svg-icon-'
+        }
       }
     },
 
@@ -178,7 +203,7 @@ module.exports = function (grunt) {
         imagesDir: '<%= yeoman.app %>/images',
         javascriptsDir: '<%= yeoman.app %>/scripts',
         fontsDir: '<%= yeoman.app %>/styles/fonts',
-        importPath: './bower_components',
+        importPath: './app/bower_components',
         httpImagesPath: '/images',
         httpGeneratedImagesPath: '/images/generated',
         httpFontsPath: '/styles/fonts',
@@ -316,7 +341,13 @@ module.exports = function (grunt) {
         }, {
           expand: true,
           cwd: '.',
-          src: 'bower_components/bootstrap-sass-official/assets/fonts/bootstrap/*',
+          src: 'app/bower_components/bootstrap-sass-official/assets/fonts/bootstrap/*',
+          dest: '<%= yeoman.dist %>'
+        },
+        {
+          expand: true,
+          cwd: '<%= yeoman.app %>',
+          src: 'images/svg_gen/*.css',
           dest: '<%= yeoman.dist %>'
         }]
       },
@@ -424,8 +455,47 @@ module.exports = function (grunt) {
         configFile: 'test/karma.conf.js',
         singleRun: true
       }
+    },
+    shell: {
+      options: {
+        stdout: true
+      },
+      protractor_install: {
+        command: 'node ./node_modules/protractor/bin/webdriver-manager update'
+      },
+      protractor_webdriver_start: {
+        command: 'webdriver-manager start'
+      }
+    },
+    protractor: {
+      options: {
+        // Location of your protractor config file
+        configFile: "test/protractor.conf.js",
+     
+        // Do you want the output to use fun colors?
+        noColor: false,
+     
+        // Set to true if you would like to use the Protractor command line debugging tool
+        // debug: true,
+     
+        // Additional arguments that are passed to the webdriver command
+        args: { 
+          seleniumPort: 4444
+        }
+      },
+      e2e: {
+        options: {
+          // Stops Grunt process if a test fails
+          keepAlive: false
+        }
+      }
     }
   });
+
+grunt.registerTask('svgIcons',[
+    'svgmin',
+    'grunticon'
+  ]);
 
 
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
@@ -446,6 +516,7 @@ module.exports = function (grunt) {
       'wiredep',
       'replace:dev',
       'ngtemplates',
+      'svgIcons',
       'concurrent:server',
       'autoprefixer',
       'connect:livereload',
@@ -457,6 +528,13 @@ module.exports = function (grunt) {
     grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
     grunt.task.run(['serve:' + target]);
   });
+
+
+   grunt.registerTask('e2e', [
+    'shell:protractor_install',
+    'shell:protractor_webdriver_start',
+    'protractor'
+  ]);
 
   grunt.registerTask('test', [
     'clean:server',
@@ -477,6 +555,7 @@ module.exports = function (grunt) {
     'ngAnnotate',
     'copy:dist',
     'cdnify',
+    'svgIcons',
     'cssmin',
     'uglify',
     'filerev',
