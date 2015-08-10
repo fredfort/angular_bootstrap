@@ -1,22 +1,22 @@
 'use strict';
 
-describe('Controller: MainCtrl', function () {
+describe('Controller: Module2MainCtrl', function () {
 
   // load the controller's module
   beforeEach(module('angular.bootstrap'));
 
-  var MainCtrl,$location,scope;
+  var Module2MainCtrl,$location,scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope, _$location_) {
     scope = $rootScope.$new();
     $location = _$location_;
-    MainCtrl = $controller('MainCtrl', {
+    Module2MainCtrl = $controller('Module2MainCtrl', {
       $scope: scope
     });
   }));
 
-  it('MainCtrl is a the origin path', function () {
-    expect($location.path()).toBe('');
+  it('Module2MainCtrl is defined', function () {
+    expect(Module2MainCtrl).not.toBe(null);
   });
 });

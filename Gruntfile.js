@@ -3,9 +3,9 @@
 
 // # Globbing
 // for performance reasons we're only matching one level down:
-// 'test/spec/{,*/}*.js'
+// 'test/unit/{,*/}*.js'
 // use this if you want to recursively match all subfolders:
-// 'test/spec/**/*.js'
+// 'test/unit/**/*.js'
 
 module.exports = function (grunt) {
 
@@ -34,6 +34,12 @@ module.exports = function (grunt) {
         files: ['bower.json'],
         tasks: ['wiredep']
       },
+      jsTemplate:{
+        files:['<%= yeoman.app %>/scripts/htmlTemplates.js'],
+        options: {
+          livereload: '<%= connect.options.livereload %>'
+        }
+      },
       js: {
         files: ['<%= yeoman.app %>/scripts/{,*/}*.js','<%= yeoman.app %>/modules/**/scripts/{,*/}*.js','!<%= yeoman.app %>/scripts/htmlTemplates.js'],
         tasks: ['newer:jshint:all'],
@@ -42,7 +48,7 @@ module.exports = function (grunt) {
         }
       },
       //jsTest: {
-        //files: ['test/spec/{,*/}*.js'],
+        //files: ['test/unit/{,*/}*.js'],
         //tasks: ['newer:jshint:test', 'karma']
       //},
       compass: {
@@ -135,7 +141,7 @@ module.exports = function (grunt) {
         options: {
           jshintrc: 'test/.jshintrc'
         },
-        src: ['test/spec/{,*/}*.js']
+        src: ['test/unit/{,*/}*.js']
       }
     },
 

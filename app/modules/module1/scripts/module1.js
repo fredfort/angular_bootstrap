@@ -22,7 +22,9 @@ angular
         resolve:{
           module1Data : ['API', function(API){
             //return API.get('modules1'); Uncomment when API is ready
-            return {};
+            return [{step:'init',   res: "OK"},
+                    {step:'test',   res: "OK"},
+                    {step:'result', res:"OK"}];
           }]
         }
       });

@@ -1,7 +1,12 @@
 'use strict';
 
 angular.module('angular.bootstrap')
-  .controller('MainCtrl',['$scope','API','config',function ($scope,API,config) {
-    $scope.data = {};
-    $scope.data.environment = config.environment;
-  }]);
+.controller('MainCtrl',mainCtrl);
+
+mainCtrl.$inject = ['$scope','API','config'];
+
+function mainCtrl($scope,API,config){
+	$scope.data = {
+		environment: config.environment
+	};
+}

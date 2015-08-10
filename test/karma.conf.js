@@ -31,10 +31,11 @@ module.exports = function(config) {
       'app/bower_components/angular-mocks/angular-mocks.js',
 
       'app/modules/**/scripts/*.js',
+      'app/modules/**/scripts/controller/*.js',
       'app/images/svg_gen/grunticon.loader.js',
       'app/scripts/**/*.js',
       'app/config/config.js',
-      'test/spec/**/*.js'
+      'test/unit/**/*.js'
     ],
 
     // list of files / patterns to exclude
