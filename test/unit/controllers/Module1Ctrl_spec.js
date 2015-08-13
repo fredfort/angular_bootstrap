@@ -10,9 +10,9 @@ describe('Controller: Module1MainCtrl', function () {
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope, _$location_) {
     scope = $rootScope.$new();
-    var module1Data = [{step:'init',   res: "OK"},
-                      {step:'test',   res: "OK"},
-                      {step:'result', res:"OK"}];//Mock resolved dependencies
+    var module1Data = [{step:'init',   res: 'OK'},
+                      {step:'test',   res: 'OK'},
+                      {step:'result', res:'OK'}];//Mock resolved dependencies
     $location = _$location_;
     Module1MainCtrl = $controller('Module1MainCtrl', {
       $scope: scope,

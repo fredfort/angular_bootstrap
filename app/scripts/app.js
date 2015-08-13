@@ -42,7 +42,7 @@ angular
         templateUrl: 'views/welcome.html'
       }); 
   })
-  .run(function(){
+  .run(function(grunticon){
     //Load grunt icon files
     grunticon(["images/svg_gen/icons.data.svg.css", "images/svg_gen/icons.data.png.css", "images/svg_gen/icons.fallback.css"]);
   });
