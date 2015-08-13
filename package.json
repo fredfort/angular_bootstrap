@@ -31,6 +31,7 @@
     "grunt-newer": "^0.8.0",
     "grunt-ng-annotate": "^1.0.1",
     "grunt-protractor-runner": "^2.0.0",
+    "grunt-protractor-webdriver": "^0.2.0",
     "grunt-shell": "^1.1.2",
     "grunt-svgmin": "^2.0.0",
     "grunt-usemin": "^2.6.2",
@@ -41,6 +42,7 @@
     "karma-phantomjs-launcher": "^0.2.0",
     "load-grunt-tasks": "^1.0.0",
     "phantomjs": "^1.9.17",
+    "protractor": "^2.1.0",
     "time-grunt": "^1.0.0"
   },
   "engines": {

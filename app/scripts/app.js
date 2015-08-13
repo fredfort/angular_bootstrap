@@ -15,7 +15,13 @@ angular
     'angular.bootstrap.module3', 
     'toaster'
   ])
-  .config(function ($stateProvider, $urlRouterProvider,$httpProvider) {
+  .config(function ($stateProvider, $urlRouterProvider,$httpProvider,$compileProvider,config) {
+
+    if(config.environment === 'production'){
+      //Tools like Protractor and Batarang need this information to run,
+      //but you can disable this in production for a significant performance boost 
+      $compileProvider.debugInfoEnabled(false);
+    }
 
     //Intercept all xhr request
     $httpProvider.interceptors.push('HttpInterceptor');

@@ -462,16 +462,20 @@ module.exports = function (grunt) {
         singleRun: true
       }
     },
-    shell: {
-      options: {
-        stdout: true
-      },
-      protractor_install: {
-        command: 'node ./node_modules/protractor/bin/webdriver-manager update'
-      },
-      protractor_webdriver_start: {
-        command: 'webdriver-manager start'
-      }
+    
+    shell:{
+      updateWebdriver:{
+        command:'node_modules/protractor/bin/webdriver-manager update --standalone'
+      }  
+    },
+
+    protractor_webdriver: {
+        start: {
+            options: {
+                path: 'node_modules/protractor/bin/',
+                command: 'webdriver-manager start'
+            }
+        }
     },
     protractor: {
       options: {
@@ -537,8 +541,8 @@ grunt.registerTask('svgIcons',[
 
 
    grunt.registerTask('e2e', [
-    'shell:protractor_install',
-    'shell:protractor_webdriver_start',
+    'shell:updateWebdriver',
+    'protractor_webdriver:start',
     'protractor'
   ]);
 

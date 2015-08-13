@@ -34,9 +34,8 @@ TODO
 
 * Use John Papa Styles
 * Migration to GULP
-* Automate the e2e testing
 * Improve Unit testing
-* Many other improvements to come
+* Other improvements to come
 
 ## Requirements
 
@@ -64,11 +63,5 @@ Running `grunt test` runs the unit tests with karma.
 
 ## End to end Testing
 
-Install protractor
-`npm install -g protractor`
-
-Download the selenium standalone server
-`webdriver-manager update`
-
-`webdriver-manager start` 
-`grunt protractor` open a browser and run the end to end tests with protractor(selenium).
+`grunt e2e` open a browser and run the end to end tests with protractor(selenium).
+The first test will take more time as selenium standalone and chromedriver are installed.
