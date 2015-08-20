@@ -1,13 +1,20 @@
 # angular_bootstrap
 
-* Good start for all your angular project 
-* Technologies used: Yeoman, Grunt, bower, angularjs, bootstrap for css.
+* Good start for all your angular projects
+* Technologies used: Yeoman, Grunt, Bower, Bngularjs, Bootstrap sass.
 
 
 Objective
 -------
 
-Build a generic start for every angular project 
+Build a generic start for every angular project.
+
+Help you to build a optimized and scalable project, ready for tests and deployable on different environment you can configure.
+
+You want to use SVG images?
+
+Just drop your svg images in the images/svg folders and you can use them via a sprite file using the css class 'svg-icon-%your_file_name%'.
+
 
 
 Done
@@ -46,7 +53,7 @@ TODO
 - Compass - [installation](http://compass-style.org/install/)
 
 ## How to run it
-1. Close the repository
+1. Clone the repository
 2. Make sure you have Grunt and Bower installed `sudo npm install -g grunt grunt-cli bower`
 3. Install dependencies `npm install && bower install` inside the project repository
 4. Run server `grunt serve`
@@ -57,6 +64,8 @@ TODO
 - Running `grunt staging` builds the staging project into the dist directory.
 - Running `grunt production` builds the production project into the dist directory.
 
+You can for instance define 3 different API urls according if you are in dev, staging or production.
+
 
 ## Unit Testing
 
@@ -64,6 +73,6 @@ Running `grunt test` runs the unit tests with karma.
 
 ## End to end Testing
 
-- Run `grunt serve` to lauch your server.
+- Run `grunt serve` to launch your server.
 - Run `grunt e2e` to open a browser and run the end to end tests with protractor(selenium).
 The first test will take more time as selenium standalone and chromedriver are installed.
