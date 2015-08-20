@@ -19,6 +19,7 @@ angular
       .state('main.module2',{
         url:'module2',
         templateUrl: PATH + '/views/main.html',
-        controller: 'Module2MainCtrl'
+        controller: 'Module2MainCtrl',
+        controllerAs:'module2'
       });
   });

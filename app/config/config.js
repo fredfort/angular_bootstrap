@@ -2,12 +2,12 @@
 
 angular.module('angular.bootstrap')
 .constant('config', {
-    environment: 'dev',
+    environment: 'staging',
     app: {
-        home: 'https://127.0.0.1:9003'
+        home: 'https://stagingUrl'
     },
     api: {
-        baseUrl: 'http://API_DEV/'
+        baseUrl: 'http://STAGING_API/'
         
     }
 });

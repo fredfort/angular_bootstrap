@@ -13,7 +13,9 @@ describe('Controller: Module1MainCtrl', function () {
     var module1Data = [{step:'init',   res: 'OK'},
                       {step:'test',   res: 'OK'},
                       {step:'result', res:'OK'}];//Mock resolved dependencies
+    
     $location = _$location_;
+    
     Module1MainCtrl = $controller('Module1MainCtrl', {
       $scope: scope,
       module1Data: module1Data

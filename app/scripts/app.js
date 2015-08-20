@@ -15,7 +15,15 @@ angular
     'angular.bootstrap.module3', 
     'toaster'
   ])
-  .config(function ($stateProvider, $urlRouterProvider,$httpProvider,$compileProvider,config) {
+  .config(config)
+  .run(run);
+
+  function run(grunticon){
+    //Load grunt icon file
+    grunticon(["images/svg_gen/icons.data.svg.css", "images/svg_gen/icons.data.png.css", "images/svg_gen/icons.fallback.css"]);
+  }
+
+  function config($stateProvider, $urlRouterProvider,$httpProvider,$compileProvider,config) {
 
     if(config.environment === 'production'){
       //Tools like Protractor and Batarang need this information to run,
@@ -41,8 +49,4 @@ angular
         url:'welcome',
         templateUrl: 'views/welcome.html'
       }); 
-  })
-  .run(function(grunticon){
-    //Load grunt icon files
-    grunticon(["images/svg_gen/icons.data.svg.css", "images/svg_gen/icons.data.png.css", "images/svg_gen/icons.fallback.css"]);
-  });
+  }

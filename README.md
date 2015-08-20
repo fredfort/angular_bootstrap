@@ -26,15 +26,16 @@ Done
 * Create a HTTP interceptor
 * Handle server message error
 * Use SvgIcons
-* Unit test
-* End to end test
+* Unit test (karma)
+* End to end test (protractor)
+* Use John Papa Styles (https://github.com/johnpapa/angular-styleguide)
+
 
 TODO
 -------
 
-* Use John Papa Styles
 * Migration to GULP
-* Improve Unit testing
+
 * Other improvements to come
 
 ## Requirements
@@ -63,5 +64,6 @@ Running `grunt test` runs the unit tests with karma.
 
 ## End to end Testing
 
+`grunt serve` to lauch your server.
 `grunt e2e` open a browser and run the end to end tests with protractor(selenium).
 The first test will take more time as selenium standalone and chromedriver are installed.

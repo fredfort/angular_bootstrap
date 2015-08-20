@@ -20,6 +20,7 @@ angular
         url:'module3',
         templateUrl: PATH + '/views/main.html',
         controller: 'Module3MainCtrl',
+        controllerAs:'module3',
         resolve:{
           module3Error : ['API', function(API){
             return API.get('modules3');//A 404 is raised

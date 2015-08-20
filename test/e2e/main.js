@@ -29,7 +29,7 @@ describe('angularjs homepage todo list', function() {
 	});
 
 	it('should resolve the module1Data', function(){
-		var data = element.all(by.repeater('data in module1Data'));
+		var data = element.all(by.repeater('data in module1.module1Data'));
 		expect(data.count()).toBe(3);
 	});
 
