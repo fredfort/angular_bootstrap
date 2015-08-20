@@ -64,6 +64,6 @@ Running `grunt test` runs the unit tests with karma.
 
 ## End to end Testing
 
-`grunt serve` to lauch your server.
-`grunt e2e` open a browser and run the end to end tests with protractor(selenium).
+- Run `grunt serve` to lauch your server.
+- Run `grunt e2e` to open a browser and run the end to end tests with protractor(selenium).
 The first test will take more time as selenium standalone and chromedriver are installed.
