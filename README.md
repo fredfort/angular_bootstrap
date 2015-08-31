@@ -1,7 +1,7 @@
 # angular_bootstrap
 
 * Good start for all your angular projects
-* Technologies used: Yeoman, Grunt, Bower, Bngularjs, Bootstrap sass.
+* Technologies used: Yeoman, Grunt, Bower, Angularjs, Bootstrap sass.
 
 
 Objective
