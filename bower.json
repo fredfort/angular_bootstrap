@@ -1,22 +1,21 @@
 {
-  "name": "sprint",
-  "description": "Sprint Angular Web Project",
+  "name": "bootstrap_angular",
   "version": "0.0.1",
-  "homepage": "https://github.com/britebill/sprint.git",
-  "license": "MIT",
-  "private": true,
   "dependencies": {
-    "angular": "~1.4.7",
-    "angular-sanitize": "~1.4.7",
-    "angular-touch": "~1.4.7",
-    "angular-aria": "~1.4.7",
-    "angular-animate": "~1.4.7",
-    "angular-ui-router": "0.2.15",
-    "bootstrap": "3.3.5",
-    "d3": "3.5.6",
-    "font-awesome": "~4.3.0",
-    "lodash": "~3.10.1",
-    "moment": "2.10.6"
-
+    "angular": "~1.4.0",
+    "angular-resource": "~1.4.0",
+    "angular-ui-router": "~0.2.15",
+    "angular-bootstrap": "~0.13.0",
+    "lodash": "~3.10.0",
+    "angular-animate": "~1.4.1",
+    "angularjs-toaster": "~0.4.15",
+    "bootstrap-sass": "~3.3.5"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.4.0"
+  },
+  "appPath": "app",
+  "resolutions": {
+    "angular": "~1.4.0"
   }
 }

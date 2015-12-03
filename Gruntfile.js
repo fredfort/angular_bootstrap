@@ -526,7 +526,6 @@ grunt.registerTask('svgIcons',[
       'wiredep',
       'replace:dev',
       'ngtemplates',
-      'svgIcons',
       'concurrent:server',
       'autoprefixer',
       'connect:livereload',

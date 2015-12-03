@@ -13,18 +13,10 @@ angular
   .config(config)
   .run(run);
 
-  function run(grunticon){
-    //Load grunt icon file
-    grunticon(["images/svg_gen/icons.data.svg.css", "images/svg_gen/icons.data.png.css", "images/svg_gen/icons.fallback.css"]);
+  function run(){
   }
 
   function config($stateProvider, $urlRouterProvider,$httpProvider,$compileProvider,config) {
-
-    if(config.environment === 'production'){
-      //Tools like Protractor and Batarang need this information to run,
-      //but you can disable this in production for a significant performance boost 
-      $compileProvider.debugInfoEnabled(false);
-    }
 
 
     //default routes if the url does not match any of the followings
