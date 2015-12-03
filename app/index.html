@@ -6,34 +6,202 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 
-    <!-- build:css({.tmp,app}) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
-    <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/angularjs-toaster/toaster.css" />
-    <!-- endbower -->
-    <!-- endbuild -->
+    <link href="//www.sprint.com/webcontent/assets/styles/menu.css" rel="stylesheet"/>
+    <!--These could be embedded in dependency file with some changes to how we build the app-->
+    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="http://eedev.sprint.com/assets/scripts/analytics/saf.js"></script>
 
-    
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <script>
+      var app = window.app = window.app || {};
+      app.build = {"isProd":false,"isStage":false,"isMobile":false,"manualTokenization":false,"tokenizationEnvironment":"","noStubs":true,"useDevMenu":false,"useJadeLint":false,"useTemplateCache":false,"recordNodeReplay":false,"playNodeReplay":false,"useCDN":false,"cdnDomain":"","checkoutStubs":false,"domain":"","disabledWebpackDevServer":false,"disableSVN":false,"disableTests":true,"debugTests":false,"forceConsoleLogging":false,"isDev":true,"isDesktop":true,"ports":{"http":3000,"https":3001,"browsersync":{"http":3002,"ui":3003},"webpack":3004},"buildTime":"2015-11-03T19:20:42.480Z","svnInfo":{"path":"app","url":"https://svn.vmldev.com/repos/sprint-shared/sprint.com/branches/FEA_20151006_menuModule/app","repositoryRoot":"https://svn.vmldev.com/repos/sprint-shared","repositoryUuid":"de09f967-c80d-0410-84ec-d9d3ed89f832","revision":"7154","nodeKind":"directory","lastChangedAuthor":"bklassen","lastChangedRev":"7057","lastChangedDate":"2015-10-29 11:40:04 -0400 (Thu, 29 Oct 2015)"}};
+    </script>
 
   </head>
-  <body ng-app="angular.bootstrap">
+   <script>
+    app.paths = {"absoluteAssets":{"svgs":"/webcontent/assets/svgs/","images":"/webcontent/assets/images/","fonts":"/webcontent/assets/fonts/","styles":"/webcontent/assets/styles/","scripts":"/webcontent/assets/scripts/","webfonts":"/webcontent/assets/webfonts/","iconfont":"/webcontent/assets/iconfont/"},"baseUrl":"/","domain":""};
+    app.disableStubs = {deviceService: false, planService: false};
+    
+    
+    
+  </script>
+  <body>
 
     <!-- Content goes here -->
-    <div ui-view></div>
+    <nav sprint-global-menu="0.1.0-alpha" id="myNav">
+    <h2 blade="signin" logged-in="false"
+    data-action="https://mysprint.sprint.com/entrycheck/login.fcc"
+    data-mobile-action="https://m.sprint.com/entrycheck/login.fcc"
+    data-login-mode="F01"
+    data-mobile-login-mode="MOBILE"
+    data-target="/mysprint/pages/secure/SigninServlet?referrerUrl=https://www.sprint.com/mysprint/pages/sl/global/login.jsp?context=CP&INTNAV=LeftNav:SignIn:SignIn"
+    data-mobile-target="https://m.sprint.com/mySprintMobile/mysprint/pages/secure/SigninServlet?targetPage=/mySprintMobile/mysprint/mobilelandingpage.jsp?INTNAV=LeftNav:SignIn:SignIn"
+    data-forgot-username="https://mysprint.sprint.com/mysprint/pages/sl/forgotpassword/external_forgot_username.jsp?INTNAV=LeftNav:SignIn:ForgotUsername"
+    data-mobile-forgot-username="https://m.sprint.com/mySprintMobile/registration/forgotusernamemain.jsp?INTNAV=LeftNav:MyS:ForgotUsername"
+    data-forgot-password="https://mysprint.sprint.com/mysprint/pages/sl/forgotpassword/external_forgot_password.jsp?INTNAV=LeftNav:SignIn:ForgotPassword"
+    data-mobile-forgot-password="https://m.sprint.com/mySprintMobile/registration/forgotpasswordmain.jsp?INTNAV=LeftNav:MyS:ForgotPassword"
+    data-disable-geolocation="false"
+    data-disable-reload-on-geolocate="true">Sign In</h2>
+<ul blade="signin">
+  <input sub-blade="signinForm" name="USER" placeholder="Username">
+  <input sub-blade="signinForm" name="PASSWORD" placeholder="Password">
+  <input sub-blade="signinForm" name="submit" placeholder="Sign In">
+  <ul sub-blade="signinForm">
+    <li><a href="#">Forgot my username</a></li>
+    <li><a href="#">Forgot my password</a></li>
+  </ul>
+  <li id="tl_desktop_sign-up" desktop-only><a href="https://mysprint.sprint.com/mysprint/pages/sl/common/createProfile.jsp?INTNAV=LeftNav:SignIn:Register" target="_blank">Sign up for My Sprint</a></li>
+  <li id="tl_mobile_sign-up" mobile-only><a href="https://m.sprint.com/mySprintMobile/registration/registration.jsp?INTNAV=LeftNav:SignIn:Register" target="_blank">Sign up for My Sprint</a></li>
+</ul>
+<h2 logged-in="true" blade="signout"
+    data-action="https://mysprint.sprint.com/entrycheck/logout.fcc"
+    data-mobile-action="https://m.sprint.com/entrycheck/logout.fcc"
+    data-target="/mysprint/LogoutHandler?targetURL=https://www.sprint.com/?INTNAV=LeftNav:SignOut"
+    data-mobile-target="https://m.sprint.com/mySprintMobile/LogoutHandler?targetURL=https://m.sprint.com?smlogout=true&amp;INTNAV%3DLeftNav:SignOut">Sign out</h2>
+<ul blade="signout" logged-in="true"></ul>
+<h2 blade="mysprint">My Sprint</h2>
+<ul blade="mysprint">
+  <li id="tl_desktop_not-signed-my-account" desktop-only logged-in="false"><a href="https://mysprint.sprint.com/mysprint/pages/sl/global/login.jsp?INTNAV=LeftNav:MyS:MyAccount">My account</a></li>
+  <li id="tl_desktop_signed-my-account" desktop-only logged-in="true"><a href="https://mysprint.sprint.com/mysprint/pages/secure/myaccount/landingPage.jsp?INTNAV=LeftNav:MyS:MyAccount">My account</a></li>
 
-    <!--Toaster popup -->
-    <toaster-container></toaster-container> 
+  <li id="tl_mobile_not-signed-my-account" mobile-only logged-in="false"><a href="https://m.sprint.com/mySprintMobile/mLogin.jsp?TARGET=-SM-https://m.sprint.com/mySprintMobile/mysprint/pages/secure/SigninServlet?targetPage=/mySprintMobile/mysprint/mobilelandingpage.jsp?INTNAV=LeftNav:MyS:MyAccount">My account</a></li>
+  <li id="tl_mobile_signed-my-account" mobile-only logged-in="true"><a href="https://m.sprint.com/mySprintMobile/mysprint/mobilelandingpage.jsp?INTNAV=LeftNav:MyS:MyAccount">My account</a></li>
+
+  <li id="tl_desktop_view-pay-bill" desktop-only><a href="https://myaccountportal.sprint.com/servlet/ecare?inf_action=login&amp;action=accountBill&amp;sl=&amp;INTNAV=LeftNav:MyS:ViewBill">View or pay bill</a></li>
+  <li id="tl_mobile_not-signed-view-pay-bill" mobile-only logged-in="false"><a href="https://m.sprint.com/mySprintMobile/mLogin.jsp?TARGET=-SM-https://m.sprint.com/mySprintMobile/mysprint/pages/secure/SigninServlet?targetPage=/mySprintMobile/mysprint/includes/paymentcenter/paymentcenter.jsp?drawers=PayYourBill/&amp;INTNAV=LeftNav:MyS:ViewBill">View or pay bill</a></li>
+  <li id="tl_mobile_signed-view-bill" mobile-only logged-in="true"><a href="https://m.sprint.com/mySprintMobile/mysprint/includes/paymentcenter/paymentcenter.jsp?drawers=PayYourBill&amp;INTNAV=LeftNav:MyS:ViewBill">View or pay bill</a></li>
+
+
+  <li id="tl_desktop_update-preferences" desktop-only><a href="https://mysprint.sprint.com/mysprint/pages/secure/mypreferences/myPreferencesLanding.jsp?INTNAV=LeftNav:MyS:UpdatePreferences">Update account preferences</a></li>
+
+  <li id="tl_desktop_activate-a-phone" desktop-only><a href="https://mysprint.sprint.com/mysprint/pages/secure/myaccount/landingPage.jsp?target=ANP&amp;INTNAV=LeftNav:MyS:Activate">Activate a phone</a></li>
+
+  <li id="tl_desktop_optimize-my-plan" desktop-only><a href="https://mysprint.sprint.com/spo/pages/secure/spoLandingPage.jsp?INTNAV=LeftNav:MyS:OptimizePlan">Optimize my plan</a></li>
+
+  <li id="tl_desktop_not-signed-add-remove-services" desktop-only logged-in="false"><a href="http://shop.sprint.com/mysprint/shop/manage_addon_service_wall.jsp?INTNAV=LeftNav:MyS:AddRemoveServices">Add or remove a service</a></li>
+  <li id="tl_desktop_signed-add-remove-services" desktop-only logged-in="true"><a href="http://shop.sprint.com/mysprint/shop/manage_addon_service_wall.jsp?INTNAV=LeftNav:MyS:AddRemoveServices">Add or remove a service</a></li>
+
+  <li id="tl_desktop_sprint-prepaid" desktop-only><a href="https://myaccount.prepaid.sprint.com/myaccount/home.do?INTNAV=LeftNav:MyS:SprintPrepaid" target="_blank">Sprint Prepaid</a></li>
+  <li id="tl_mobile_sprint-prepaid" mobile-only><a href="https://m.prepaid.sprint.com/mt/myaccount.prepaid.sprint.com/myaccount/home.do?INTNAV=LeftNav:MyS:SprintPrepaid" target="_blank">Sprint Prepaid</a></li>
+  <li>
+    <ul sub-blade="legacyLinks">
+      <li id="change-plan" mobile-only><a href="https://m.sprint.com/shop/mobile/shop/plan/change_plan_selection.jsp?subscriberId=%(subscriberId)s&pricePlanCode=%(pricePlanCode)s">Change Plan</a></li>
+      <li id="change-plan" desktop-only><a href="http://shop.sprint.com/mysprint/shop/plan/plan_wall.jsp?firstSelection=PLANS&flow=CP&planFamilyType=Individual">Change Plan</a></li>
+    </ul>
+  </li>
+</ul>
+<h2 blade="shop"
+    data-device-promo-endpoint="/api/devices/promos.json"
+    data-device-hero-endpoint="/api/devices/heroes.json"
+    data-disable-geolocation="false"
+    data-disable-reload-on-geolocate="false"
+        >Shop</h2>
+<ul blade="shop">
+
+  <li id="tl_desktop_phones" desktop-only><a href="https://www.sprint.com/shop/?INTNAV=LeftNav:Shop:Phones#!/device/list/PHONE">Phones</a></li>
+  <li id="tl_mobile_phones" mobile-only><a href="https://m.sprint.com/shop/?INTNAV=LeftNav:Shop:Phones#!/device/list/PHONE">Phones</a></li>
+
+  <li id="tl_desktop_tablets" desktop-only><a href="https://www.sprint.com/shop/?INTNAV=LeftNav:Shop:Tablets#!/device/list/TABLET">Tablets</a></li>
+  <li id="tl_mobile_tablets" mobile-only><a href="https://m.sprint.com/shop/?INTNAV=LeftNav:Shop:Tablets#!/device/list/TABLET">Tablets</a></li>
+
+  <li id="tl_desktop_hotspots" desktop-only><a href="http://shop.sprint.com/mysprint/shop/phone_wall.jsp?flow=&amp;tabId=dt_mbc&amp;INTNAV=LeftNav:Shop:HotspotsMore">Hotspots &amp; more</a></li>
+  <li id="tl_mobile_hotspots" mobile-only><a href="https://m.sprint.com/shop/mobile/shop/phone_wall.jsp?selDeviceCategory=dt_mbc&amp;INTNAV=LeftNav:Shop:HotspotsMore">Hotspots &amp; more</a></li>
+
+  <li id="tl_desktop_plans" desktop-only><a href="https://www.sprint.com/shop/plan-wall/?INTNAV=LeftNav:Shop:Plans">Plans</a></li>
+  <li id="tl_mobile_plans" mobile-only><a href="https://m.sprint.com/shop/plan-wall/?INTNAV=LeftNav:Shop:Plans">Plans</a></li>
+
+  <li id="tl_mobile_promotions" mobile-only><a href="https://www.sprint.com/landings/promotions/index.html?INTNAV=LeftNav:Shop:Promotions">Promotions</a></li>
+  <li id="tl_desktop_promotions_previously_logged_in" desktop-only previously-logged-in="true"><a href="http://shop.sprint.com/mysprint/shop_landing.jsp?INTNAV=LeftNav:Shop:Promotions">Promotions</a></li>
+  <li id="tl_desktop_promotions" desktop-only previously-logged-in="false"><a href="https://www.sprint.com/landings/promotions/index.html?INTNAV=LeftNav:Shop:Promotions">Promotions</a></li>
+
+
+  <li id="tl_desktop_accessories" desktop-only><a href="https://www.sprint.com/landings/accessorylanding/?INTNAV=LeftNav:Shop:Accessories">Accessories</a></li>
+  <li id="tl_mobile_accessories" mobile-only><a href="https://m.sprint.com/shop/mobile/shop/accessory/ao/accessory_wall.jsp?INTNAV=LeftNav:Shop:Accessories">Accessories</a></li>
+  <li id="tl_mobile_prepaid-shop" mobile-only><a href="https://prepaid.sprint.com/shop/?INTNAV=LeftNav:Shop:Prepaid">Prepaid</a></li>
+  <li id="tl_desktop_prepaid-shop" desktop-only><a href="https://prepaid.sprint.com/shop/?INTNAV=LeftNav:Shop:Prepaid">Prepaid</a></li>
+</ul>
+<h2 blade="support">Support</h2>
+<ul blade="support">
+  <li id="tl_desktop_community" desktop-only><a href="https://community.sprint.com/baw/welcome?INTNAV=LeftNav:Support:Community">Community</a></li>
+  <li id="tl_mobile_community" mobile-only><a href="https://community.sprint.com/baw/mobile/mobile-access.jspa?INTNAV=LeftNav:Support:Community">Community</a></li>
+  <li id="tl_desktop_accounts" desktop-only><a href="http://support.sprint.com/support/accountpage?INTNAV=LeftNav:Support:Accounts">Accounts</a></li>
+  <li id="tl_desktop_devices" desktop-only><a href="http://support.sprint.com/support/devicepage?INTNAV=LeftNav:Support:Devices">Devices</a></li>
+  <li id="tl_mobile_devices" mobile-only><a href="https://m.sprint.com/mobile/support/index.html?INTNAV=LeftNav:Support:Devices">Device</a></li>
+  <li id="tl_desktop_services" desktop-only><a href="http://support.sprint.com/support/servicepage?INTNAV=LeftNav:Support:Services">Services</a></li>
+  <li id="tl_desktop_international" desktop-only><a href="http://support.sprint.com/support/international?INTNAV=LeftNav:Support:International">International</a></li>
+</ul>
+<h2 blade="business" data-action="https://www.sprint.com/business/index.html?INTNAV=LeftNav:More:Business">Business</h2>
+<h2 blade="more">More</h2>
+<ul blade="more">
+  <li id="tl_desktop_apps-services" desktop-only><a href="http://shop.sprint.com/mysprint/services_solutions/index.jsp?INTNAV=LeftNav:More:AppsServices">Apps and services</a></li>
+  <li id="tl_desktop_locate-store" desktop-only><a href="http://www.sprintstorelocator.com/locator/?INTNAV=LeftNav:More:LocateStore" target="_blank">Locate a store</a></li>
+  <li id="tl_mobile_locate-store" mobile-only><a href="http://storelocator.sprint.com/mobile/EZ.aspx?INTNAV=LeftNav:More:LocateStore" target="_blank">Locate a store</a></li>
+  <li id="tl_desktop_coverage-map" desktop-only><a href="http://coverage.sprint.com/IMPACT.jsp?INTNAV=LeftNav:More:CoverageMap">Coverage map</a></li>
+  <li id="tl_mobile_coverage-map" mobile-only><a href="https://m.sprint.com/mySprintMobile/digitalpages/coveragemap/mdigitalcoverage.jsp?INTNAV=LeftNav:More:CoverageMap">Coverage map</a></li>
+  <li id="tl_about-sprint"><a href="http://newsroom.sprint.com/about-us/?INTNAV=LeftNav:More:About" target="_blank">About Sprint</a></li>
+  <li id="tl_desktop_contact-us" desktop-only><a href="https://mysprint.sprint.com/mysprint/jsp/landingPage/contactus.jsp?INTNAV=LeftNav:More:ContactUs">Contact us</a></li>
+</ul>
+<h2 blade="search" data-engine-id="017156821116155704347:gmz2eht0tma" data-key="AIzaSyCMGfdDaSfjqv5zYoS0mTJnOT3e9MURWkU">Search</h2>
+<ul blade="search">
+  <li>
+    <h3 sub-blade="searchBox">What are you looking for?</h3>
+    <input sub-blade="searchBox" name="search" placeholder="Enter your search here">
+    <input sub-blade="searchBox" name="submit" placeholder="Search">
+    <ul sub-blade="searchBox">
+      <li id="all"><a href="#">ALL OF SPRINT.COM</a></li>
+      <li id="shop"><a href="#">SHOP</a></li>
+      <li id="support"><a href="#">SUPPORT</a></li>
+      <li id="community"><a href="#">COMMUNITY</a></li>
+      <li id="connection"><a href="#">SPRINT CONNECTION</a></li>
+    </ul>
+  </li>
+  <li>
+    <h3 sub-blade="popularSearches">Popular Searches</h3>
+    <ul sub-blade="popularSearches">
+      <li id="tl_pop-search-1"><a href="https://www.sprint.com/landings/iphone/index.html?INTNAV=LeftNav:Search:PopSearch1">iPhone 6 and iPhone 6 Plus</a></li>
+      <li id="tl_pop-search-1"><a href="https://www.sprint.com/landings/datashare/index.html?INTNAV=LeftNav:Search:PopSearch2">Family Data Share</a></li>
+      <li id="tl_pop-search-1"><a href="https://www.sprint.com/landings/samsung-next-big-thing/index.html?INTNAV=LeftNav:Search:PopSearch3">Samsung Galaxy S6</a></li>
+    </ul>
+  </li>
+  <li>
+    <h3 sub-blade="popularLinks">Popular Links</h3>
+    <ul sub-blade="popularLinks">
+      <li id="tl_pop-link-1"><a href="https://www.sprint.com/business/index.html?INTNAV=LeftNav:Search:PopLinks1" target="_blank">Business</a></li>
+      <li id="tl_pop-link-2"><a href="http://storelocator.sprint.com/locator/?INTNAV=LeftNav:Search:PopLinks2" target="_blank">Locate a store</a></li>
+      <li id="tl_pop-link-3"><a href="http://coverage.sprint.com/IMPACT.jsp?INTNAV=LeftNav:Search:PopLinks3" target="_blank">Coverage Map</a></li>
+    </ul>
+  </li>
+  <li>
+    <h3 sub-blade="locator">Looking for a Sprint Store?</h3>
+  </li>
+
+</ul>
+
+</nav>
+
+
+
+    <div id="myApp">
+        <div ui-view></div>
+    </div>
+
 
     <!-- build:js scripts/vendor.js -->
 
     <!-- bower:js -->
     <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-resource/angular-resource.js"></script>
-    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-    <script src="bower_components/lodash/lodash.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
-    <script src="bower_components/angularjs-toaster/toaster.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/d3/d3.js"></script>
+    <script src="bower_components/lodash/lodash.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -52,13 +220,21 @@
 
     <script src="modules/module1/scripts/module1.js"></script>
     <script src="modules/module2/scripts/module2.js"></script>
-    <script src="modules/module3/scripts/module3.js"></script>
 
     <script src="modules/module1/scripts/controller/Module1MainCtrl.js"></script>
     <script src="modules/module2/scripts/controller/Module2MainCtrl.js"></script>
-    <script src="modules/module3/scripts/controller/Module3MainCtrl.js"></script>
 
     <!-- endbuild -->
 
 </body>
+ <script src="/webcontent/assets/scripts/menu-dependencies.pkgd.js"></script>
+ <script src="/webcontent/assets/scripts/menu-no-deps.pkgd.js"></script>
+  <script>
+     angular.module('testAlert', []);
+     angular.module('combined', ['app', 'testAlert']);
+     angular.element(document).ready(function(){
+        angular.bootstrap('#myNav', ['combined']);
+        angular.bootstrap('#myApp', ['angular.bootstrap']);
+    });
+  </script>
 </html>

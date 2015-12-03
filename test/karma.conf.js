@@ -20,12 +20,15 @@ module.exports = function(config) {
     files: [
       // bower:js
       'app/bower_components/angular/angular.js',
-      'app/bower_components/angular-resource/angular-resource.js',
-      'app/bower_components/angular-ui-router/release/angular-ui-router.js',
-      'app/bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
-      'app/bower_components/lodash/lodash.js',
+      'app/bower_components/angular-sanitize/angular-sanitize.js',
+      'app/bower_components/angular-touch/angular-touch.js',
+      'app/bower_components/angular-aria/angular-aria.js',
       'app/bower_components/angular-animate/angular-animate.js',
-      'app/bower_components/angularjs-toaster/toaster.js',
+      'app/bower_components/angular-ui-router/release/angular-ui-router.js',
+      'app/bower_components/bootstrap/dist/js/bootstrap.js',
+      'app/bower_components/d3/d3.js',
+      'app/bower_components/lodash/lodash.js',
+      'app/bower_components/moment/moment.js',
       // endbower
 
       'app/bower_components/angular-mocks/angular-mocks.js',

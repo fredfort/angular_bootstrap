@@ -5,15 +5,10 @@
  */
 angular
   .module('angular.bootstrap', [
-    'ngResource',
-    'ngAnimate',
     'ui.router',
-    'ui.bootstrap',
     'angular.bootstrap.htmlTemplates',
     'angular.bootstrap.module1',
-    'angular.bootstrap.module2',
-    'angular.bootstrap.module3', 
-    'toaster'
+    'angular.bootstrap.module2'
   ])
   .config(config)
   .run(run);
@@ -31,8 +26,6 @@ angular
       $compileProvider.debugInfoEnabled(false);
     }
 
-    //Intercept all xhr request
-    $httpProvider.interceptors.push('HttpInterceptor');
 
     //default routes if the url does not match any of the followings
     $urlRouterProvider.otherwise('/welcome'); 
