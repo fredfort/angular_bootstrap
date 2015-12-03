@@ -441,20 +441,6 @@ module.exports = function (grunt) {
       }
     },
 
-
-    // Run some tasks in parallel to speed up the build process
-    concurrent: {
-      options: {
-        limit:4
-      },
-      server: [
-        'compass:server'
-      ],
-      test: [
-        'compass'
-      ]
-    },
-
     // Test settings
     karma: {
       unit: {
@@ -509,24 +495,10 @@ grunt.registerTask('svgIcons',[
 
 
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
-    if (target === 'dist') {
-      return grunt.task.run(['build', 'wiredep', 'connect:dist:keepalive']);
-    }
-
-    if (target === 'production') {
-      return grunt.task.run(['replace:production', 'build', 'wiredep', 'connect:dist:keepalive']);
-    }
-
-    if (target === 'staging') {
-      return grunt.task.run(['replace:staging', 'build', 'wiredep', 'connect:dist:keepalive']);
-    }
 
     grunt.task.run([
-      'clean:server',
-      'wiredep',
       'replace:dev',
       'ngtemplates',
-      'concurrent:server',
       'autoprefixer',
       'connect:livereload',
       'watch'
@@ -539,57 +511,4 @@ grunt.registerTask('svgIcons',[
   });
 
 
-   grunt.registerTask('e2e', [
-    'shell:updateWebdriver',
-    'protractor_webdriver:start',
-    'protractor'
-  ]);
-
-  grunt.registerTask('test', [
-    'clean:server',
-    'replace:dev',
-    'concurrent:test',
-    'autoprefixer',
-    'connect:test',
-    'karma'
-  ]);
-
-  grunt.registerTask('build', [
-    'clean:dist',
-    'useminPrepare',
-    'compass:dist',
-    'imagemin',
-    'autoprefixer',
-    'concat',
-    'ngAnnotate',
-    'copy:dist',
-    'cdnify',
-    'svgIcons',
-    'cssmin',
-    'uglify',
-    'filerev',
-    'usemin',
-    'htmlmin',
-    'ngtemplates'
-  ]);
-
-  grunt.registerTask('production',[
-    'newer:jshint',
-    'replace:production',
-    'test',
-    'build'
-  ]);
-
-  grunt.registerTask('staging',[
-    'newer:jshint',
-    'replace:staging',
-    'test',
-    'build'
-  ]);
-
-  grunt.registerTask('default', [
-    'newer:jshint',
-    'test',
-    'build'
-  ]);
 };
