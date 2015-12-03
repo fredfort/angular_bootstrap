@@ -10,9 +10,6 @@ Test left bar integration
 ## Requirements
 
 - NPM (Comes with [Node.js](http://nodejs.org/))
-- Ruby (comes pre-installed on Mac) - [installation guide](https://www.ruby-lang.org/en/installation/)
-- SASS - [installation](http://sass-lang.com/install)
-- Compass - [installation](http://compass-style.org/install/)
 
 ## How to run it
 1. Clone the repository
